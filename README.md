@@ -1,3 +1,62 @@
+## Python Automation CLI
+
+Simple, ready-to-run automation commands:
+
+- Organize files by extension
+- Fetch a URL and save to a file
+- Merge multiple CSV files into one
+- Find and replace text in files (with optional regex)
+
+### Quick start
+
+1) Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+2) See available commands
+
+```bash
+python automation.py -h
+```
+
+### Usage
+
+Organize files by extension inside a folder:
+
+```bash
+python automation.py organize /path/to/folder
+# dry run
+python automation.py organize /path/to/folder --dry-run
+```
+
+Fetch a URL to a file:
+
+```bash
+python automation.py fetch https://example.com --out page.html
+```
+
+Merge CSV files (union of headers):
+
+```bash
+python automation.py merge-csv --inputs data/a.csv data/b.csv --out merged.csv
+```
+
+Find and replace text in files:
+
+```bash
+python automation.py replace --path ./docs --glob "**/*.md" --find "old" --replace "new"
+# regex mode
+python automation.py replace --path ./src --glob "**/*.py" --find "\btemp_\d+\b" --replace "placeholder" --regex
+```
+
+You can also run as a module:
+
+```bash
+python -m automate -h
+```
+
 # Welcome to HashLips
 
 All the code in these repos was created and explained by HashLips on the main YouTube channel.
